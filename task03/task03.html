@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lab 04 Task03</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div><h1>Fawad Ali 19PCSE1845</h1></div>
+    <script>
+      $(document).ready(function () {
+        $("#country").change(function () {
+          var country = $(this).val();
+          var citySelect = $("#city");
+
+          // Clear current city options
+          citySelect.empty();
+
+          // Add cities for Pakistan if selected
+          if (country === "pakistan") {
+            var cities = [
+              "Islamabad",
+              "Peshawar",
+              "Karachi",
+              "Lahore",
+              "Rawalpindi",
+              "Faisalabad",
+            ];
+            $.each(cities, function (index, value) {
+              var option = $("<option/>", {
+                value: value,
+                text: value,
+              });
+              citySelect.append(option);
+            });
+          }
+          // Add cities for other countries here
+        });
+      });
+    </script>
+    <div class="container-fluid">
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" /><br /><br />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" /><br /><br />
+        <label for="country">Country:</label>
+        <select id="country" name="country">
+          <option value="">Select a country</option>
+          <option value="pakistan">Pakistan</option>
+          <!-- Add more options for other countries --></select
+        ><br /><br />
+
+        <label for="city">City:</label>
+        <select id="city" name="city">
+          <option value="">Select a city</option>
+          <!-- Cities for Pakistan will be dynamically added here using jQuery --></select
+        ><br /><br />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message"></textarea><br /><br />
+
+        <label for="pic">Upload Picture:</label>
+        <input type="file" id="pic" name="pic" /><br /><br />
+
+        <input id="button" type="submit" value="SignUp" />
+      </form>
+    </div>
+  </body>
+</html>

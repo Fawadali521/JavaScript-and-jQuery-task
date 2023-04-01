@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lab 04 task 01</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script>
+      function calculateOne() {
+        const x = document.getElementById("qt1").value;
+        const res = x * 58;
+        document.getElementById("qt2").value = res;
+
+        const res2 = parseInt(res);
+        document.getElementById("qt7").value = res2;
+      }
+
+      function calculateSecond() {
+        const x = document.getElementById("qt3").value;
+        const res = x * 46;
+        document.getElementById("qt4").value = res;
+
+        const gTotal = document.getElementById("qt7").value;
+        const res2 = parseInt(res) + parseInt(gTotal);
+        document.getElementById("qt7").value = res2;
+      }
+
+      function calculateME() {
+        const x = document.getElementById("qt5").value;
+        const res = x * 1090;
+        document.getElementById("qt6").value = res;
+
+        const gTotal = document.getElementById("qt7").value;
+        const res2 = parseInt(res) + parseInt(gTotal);
+        document.getElementById("qt7").value = res2;
+      }
+
+      function calculate() {
+        const gTotal = parseInt(document.getElementById("qt7").value);
+        const percent = (gTotal * 15) / 100;
+        document.getElementById("qt8").value = percent;
+
+        document.getElementById("qt9").value = percent + gTotal;
+      }
+    </script>
+  </head>
+
+  <body>
+    <div><h1>Fawad Ali 19PCSE1845</h1></div>
+    <div id="top">Medical Billing System</div>
+    <form action="">
+      <table>
+        <thead>
+          <tr id="top-item">
+            <td>S.No,</td>
+            <td>Item</td>
+            <td>Unit Cost RS.</td>
+            <td>Quantity</td>
+            <td>Cost, RS</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Erithromycin 100 mg</td>
+            <td>58</td>
+            <td>
+              <input
+                type="text"
+                name="qt1"
+                id="qt1"
+                value=""
+                onchange="calculateOne()"
+              />
+            </td>
+            <td>
+              <input type="text" name="qt1" id="qt2" value="" />
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Femramcyin 500 mg</td>
+            <td>46</td>
+            <td>
+              <input
+                type="text"
+                name="qt3"
+                id="qt3"
+                value=""
+                onchange="calculateSecond()"
+              />
+            </td>
+            <td>
+              <input type="text" name="qt4" id="qt4" value="" />
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Oximycin 2 mg</td>
+            <td>1090</td>
+            <td>
+              <input
+                type="text"
+                name="qt5"
+                id="qt5"
+                value=""
+                onchange="calculateME()"
+              />
+            </td>
+            <td>
+              <input type="text" name="qt6" id="qt6" value="" />
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Total</td>
+            <td>
+              <input type="text" name="qt7" id="qt7" value="" />
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>GST 15%</td>
+            <td>
+              <input type="text" name="qt8" id="qt8" value="" />
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Grand, Total RS</td>
+            <td>
+              <input type="text" name="qt9" id="qt9" value="" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <input
+        type="button"
+        value="Update Grand Total"
+        style="color: red"
+        onclick="calculate()"
+      />
+    </form>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lab 04 Task04</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div><h1>Fawad Ali 19PCSE1845</h1></div>
+    <script>
+      $(document).ready(function () {
+        // color toggle button
+        $("#color-toggle").click(function () {
+          $(".box").toggleClass("blue");
+        });
+
+        // border toggle button
+        $("#border-toggle").click(function () {
+          $(".box").toggleClass("rounded");
+        });
+
+        // add box button
+        $("#add-box").click(function () {
+          $('<div class="box"></div>').appendTo("body");
+        });
+      });
+    </script>
+
+    <div class="box">box 1</div>
+    <div class="box">box 2</div>
+    <div class="box">box 3</div>
+
+    <button id="color-toggle">Toggle Color</button>
+    <button id="border-toggle">Toggle Borders</button>
+    <button id="add-box">Add Box</button>
+  </body>
+</html>
